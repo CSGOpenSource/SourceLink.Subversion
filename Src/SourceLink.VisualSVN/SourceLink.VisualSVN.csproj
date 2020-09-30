@@ -1,0 +1,51 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>net472;netcoreapp2.1</TargetFrameworks>
+    <AssemblyName>SourceLink.SVN</AssemblyName>
+    <AutoGenerateAssemblyVersion>true</AutoGenerateAssemblyVersion>
+    <!-- Using an explicit nuspec file since NuGet Pack target currently doesn't support including dependencies in tools packages -->
+    <IsPackable>true</IsPackable>
+    <NuspecFile>$(MSBuildProjectName).nuspec</NuspecFile>
+    <NuspecBasePath>$(OutputPath)</NuspecBasePath>
+    <DevelopmentDependency>true</DevelopmentDependency>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\SourceLink.Subversion.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsAsErrors />
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <IncludeSymbols>true</IncludeSymbols>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsAsErrors />
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup>
+    <!-- It must be after "OutputPath" is set -->
+    <NuspecProperties>Id=$(MSBuildProjectName);Version=$(Version);Authors=$(Authors);ProjectDirectory=$(MSBuildProjectDirectory)</NuspecProperties>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)'=='Debug|net472'">
+    <DebugType>full</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)'=='Release|net472'">
+    <DebugType>pdbonly</DebugType>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="3.3.0" PrivateAssets="all" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Build" Version="16.5.0" />
+    <PackageReference Include="Microsoft.Build.Tasks.Core" Version="16.5.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\GlobalAssemblyInfo.cs" Link="GlobalAssemblyInfo.cs" />
+    <Compile Include="..\SourceLink.Common\GetSourceLinkUrlTask.cs" Link="GetSourceLinkUrlTask.cs" />
+    <Compile Include="..\SourceLink.Common\SvnInfo.cs" Link="SvnInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Svn\Tool\*" />
+  </ItemGroup>
+</Project>

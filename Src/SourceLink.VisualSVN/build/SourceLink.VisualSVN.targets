@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <PropertyGroup>
+    <_SourceLinkSVNAssemblyFile Condition="'$(MSBuildRuntimeType)' != 'Core'">..\tools\net472\SourceLink.SVN.dll</_SourceLinkSVNAssemblyFile>
+    <_SourceLinkSVNAssemblyFile Condition="'$(MSBuildRuntimeType)' == 'Core'">..\tools\netcoreapp2.1\SourceLink.SVN.dll</_SourceLinkSVNAssemblyFile>
+  </PropertyGroup>
+
+  <UsingTask TaskName="SourceLink.SVN.GetSourceLinkUrlTask" AssemblyFile="$(_SourceLinkSVNAssemblyFile)"/>
+
+  <PropertyGroup>
+    <SourceLinkUrlInitializerTargets>$(SourceLinkUrlInitializerTargets);_InitializeSVNSourceLinkUrl</SourceLinkUrlInitializerTargets>
+  </PropertyGroup>
+
+  <Target Name="InitializeSourceControlInformationFromSourceControlManager" />
+
+  <Target Name="_InitializeSVNSourceLinkUrl" Condition="'$(SourceRoot)' == ''">
+    <SourceLink.SVN.GetSourceLinkUrlTask ProjectPath="$(MSBuildProjectDirectory)" SourceRoot="@(SourceRoot)">
+      <Output TaskParameter="Roots" ItemName="SourceRoot"/>
+    </SourceLink.SVN.GetSourceLinkUrlTask>
+
+    <!-- Dump the task result to assist trouble shooting -->
+    <Message Text="SourceRoot value is '@(SourceRoot)'" Importance="high" />
+    <Message Text="SourceRoot.SourceControl is '%(SourceRoot.SourceControl)'" Importance="high" />
+    <Message Text="SourceRoot.MappedPath is '%(SourceRoot.MappedPath)'" Importance="high" />
+    <Message Text="SourceRoot.SourceLinkUrl is '%(SourceRoot.SourceLinkUrl)'" Importance="high" />
+  </Target>
+</Project>
