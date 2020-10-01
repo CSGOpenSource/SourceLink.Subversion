@@ -22,10 +22,10 @@ namespace SourceLink.Common
             _projectPath = projectPath;
             _log = log;
 
-            Execute();
+            Initialize();
         }
 
-        private void Execute()
+        private void Initialize()
         {
             try
             {

@@ -41,7 +41,6 @@
     <PackageReference Include="Microsoft.Build.Tasks.Core" Version="16.5.0" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\GlobalAssemblyInfo.cs" Link="GlobalAssemblyInfo.cs" />
     <Compile Include="..\SourceLink.Common\GetSourceLinkUrlTask.cs" Link="GetSourceLinkUrlTask.cs" />
     <Compile Include="..\SourceLink.Common\SvnInfo.cs" Link="SvnInfo.cs" />
   </ItemGroup>

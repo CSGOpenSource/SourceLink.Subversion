@@ -4,9 +4,9 @@ VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9AB47699-BCB3-450F-89B6-09558C5B6929}"
 	ProjectSection(SolutionItems) = preProject
-		.editorconfig = .editorconfig
-		CodeAnalysis.ruleset = CodeAnalysis.ruleset
-		Ignore.ruleset = Ignore.ruleset
+		Directory.build.props = Directory.build.props
+		nuget.config = nuget.config
+		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SourceLink.VisualSVN", "Src\SourceLink.VisualSVN\SourceLink.VisualSVN.csproj", "{95A27031-4BB4-4EED-88BA-34103B91B75B}"
