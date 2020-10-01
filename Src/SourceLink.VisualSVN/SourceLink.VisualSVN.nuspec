@@ -2,12 +2,18 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>$Id$</id>
+    <title>$Id$</title>
     <version>$Version$</version>
     <authors>$Authors$</authors>
     <description>Generates source link for VisualSVN repositories.</description>
     <dependencies>
       <dependency id="Microsoft.SourceLink.Common" version="1.0.0" />
     </dependencies>
+    <license type="expression">MIT</license>
+    <projectUrl>https://github.com/WenningQiu/SourceLink.Subversion</projectUrl>
+    <repository type="git" url="https://github.com/WenningQiu/SourceLink.Subversion" />
+    <releaseNotes></releaseNotes>
+    <tags>VisualSVN SVN SourceLink</tags>
   </metadata>
   <files>
     <file src="$ProjectDirectory$\..\..\Tool\x86\*.*" target="tools/x86" />
