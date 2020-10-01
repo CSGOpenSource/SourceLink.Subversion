@@ -41,7 +41,7 @@ namespace SourceLink.SVN
                 ITaskItem item = new TaskItem($@"{svnInfo.WorkingCopyPath}\");
                 item.SetMetadata("SourceControl", "svn");
                 item.SetMetadata("MappedPath", $@"{svnInfo.WorkingCopyPath}\");
-                item.SetMetadata("SourceLinkUrl", $"{GetSourceLineUrl(svnInfo)}");
+                item.SetMetadata("SourceLinkUrl", $"{GetSourceLinkUrl(svnInfo)}");
 
                 Roots = new[] {item};
             }
