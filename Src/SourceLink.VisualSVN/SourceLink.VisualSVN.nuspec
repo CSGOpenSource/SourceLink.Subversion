@@ -10,7 +10,8 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="$ProjectDirectory$\..\..\Tool\*.*" target="tools" />
+    <file src="$ProjectDirectory$\..\..\Tool\x86\*.*" target="tools/x86" />
+    <file src="$ProjectDirectory$\..\..\Tool\x64\*.*" target="tools/x64" />
     <file src="$ProjectDirectory$\bin\release\net472\SourceLink.SVN.dll" target="tools/net472" />
     <file src="$ProjectDirectory$\bin\release\net472\SourceLink.SVN.pdb" target="tools/net472" />
     <file src="$ProjectDirectory$\bin\release\netcoreapp2.1\SourceLink.SVN.dll" target="tools/netcoreapp2.1" />

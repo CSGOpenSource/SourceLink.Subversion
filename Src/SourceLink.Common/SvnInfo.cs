@@ -100,9 +100,10 @@ namespace SourceLink.Common
 
         private static string FindSvnExe()
         {
+            var svnPartialPath = Environment.Is64BitOperatingSystem ? "../x64/svn.exe" : "../x86/svn.exe";
+
             var executingAssemblyLocation = Assembly.GetExecutingAssembly().Location;
-            var svnExe = Path.Combine(Path.GetDirectoryName(executingAssemblyLocation), "../svn.exe");
-            return svnExe;
+            return Path.Combine(Path.GetDirectoryName(executingAssemblyLocation), svnPartialPath);
         }
 
         private void ParseInfo(string info)
