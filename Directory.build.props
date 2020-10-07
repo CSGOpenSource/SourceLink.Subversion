@@ -1,6 +1,6 @@
 ﻿<Project>
   <PropertyGroup>
-    <PackageProjectUrl>https://github.com/WenningQiu/SourceLink.Subversion</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/CSGOpenSource/SourceLink.Subversion.git</PackageProjectUrl>
     <Authors>Wenning Qiu</Authors>
     <Product>SourceLink for Subversion</Product>
     <NeutralLanguage>en-US</NeutralLanguage>
