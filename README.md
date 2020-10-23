@@ -5,7 +5,7 @@ Package SourceLink.VisualSVN supports VisualSVN Server. To embed Source Link met
 
 ```xml
   <ItemGroup>
-    <PackageReference Include="SourceLink.VisualSVN" Version="1.0.0" PrivateAssets="all" />
+    <PackageReference Include="SourceLink.VisualSVN" Version="1.0.1" PrivateAssets="all" />
   </ItemGroup>
 ```
 
