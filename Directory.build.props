@@ -4,8 +4,8 @@
     <Authors>Wenning Qiu</Authors>
     <Product>SourceLink for Subversion</Product>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <Version>1.0.1</Version>
-    <AssemblyVersion>1.0.0.0</AssemblyVersion>
-    <FileVersion>1.0.0.0</FileVersion>
+    <Version>1.0.2</Version>
+    <AssemblyVersion>1.0.2.0</AssemblyVersion>
+    <FileVersion>1.0.2.0</FileVersion>
   </PropertyGroup>
 </Project>
